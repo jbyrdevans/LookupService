@@ -1,0 +1,19 @@
+﻿@model RoutingLookup.Models.Search
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+@using (Html.BeginForm("Search", "Results"))
+{
+	<div>
+		@Html.LabelFor(model => model.RoutingNumber)
+	</div>
+	<div>
+		@Html.EditorFor(model => model.RoutingNumber)
+	</div>
+
+    <p>
+        <input type="submit" value="Go" />
+    </p>
+}

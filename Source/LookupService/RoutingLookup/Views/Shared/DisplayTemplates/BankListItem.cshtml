@@ -1,0 +1,11 @@
+﻿@model RoutingLookup.Models.Bank
+<div class="bank-list item">
+	<span style="display:inline-block; width: 200px;">
+		<a style="" href="@Url.Action("Bank", "Results", new { id = Model.RoutingNumber }, null)">
+			@Html.DisplayFor(model => model.RoutingNumber)
+		</a>
+	</span>
+	<span style="display:inline-block; width: 400px;">
+		@Html.DisplayFor(model => model.Name)
+	</span>
+</div>

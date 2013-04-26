@@ -1,0 +1,12 @@
+4/17/2013 4:50:12 PM	This log contains information about the import operation of the script 'data.sql' into project 'RoutingLookup.Database' on computer 'DCG1' by user'Nato.
+4/17/2013 4:50:12 PM	Started importing file: C:\Projects\Routing\RoutingNumbers\data.sql 
+4/17/2013 4:50:12 PM	File name C:\Projects\Routing\RoutingNumbers\data.sql (size: 391)
+4/17/2013 4:50:12 PM	Parsing import script
+4/17/2013 4:50:12 PM	Total number of batches in script: 1
+4/17/2013 4:50:12 PM	Total number of statements in script: 1
+4/17/2013 4:50:12 PM	The script was successfully imported into the project.
+4/17/2013 4:50:12 PM	Analyzing schema objects...
+4/17/2013 4:50:12 PM	Scanning project for duplicate elements
+4/17/2013 4:50:12 PM	Finished duplicate element processing
+4/17/2013 4:50:12 PM	A summary of the import was saved to the following location: C:\Projects\Routing\RoutingNumbers\Source\LookupService\RoutingLookup\RoutingLookup.Database\Import Script Logs\data_sql_20130417105012.log
+4/17/2013 4:50:12 PM	Click Finish to continue...

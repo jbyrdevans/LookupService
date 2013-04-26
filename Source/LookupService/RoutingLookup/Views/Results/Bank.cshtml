@@ -1,0 +1,15 @@
+﻿@model RoutingLookup.Models.Bank
+@{
+    ViewBag.Title = "Results";
+}
+
+<h2>Bank</h2>
+
+@if (Model == null)
+{
+	<div>No results found.</div>
+}
+else
+{
+	@Html.DisplayFor(model => Model)
+}
