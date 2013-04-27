@@ -1,19 +1,16 @@
 ﻿@model RoutingLookup.Models.Search
 @{
-    ViewBag.Title = "Search";
+	ViewBag.Title = "Search";
 }
 
-<h2>Search</h2>
-@using (Html.BeginForm("Search", "Results"))
-{
-	<div>
-		@Html.LabelFor(model => model.RoutingNumber)
-	</div>
-	<div>
-		@Html.EditorFor(model => model.RoutingNumber)
-	</div>
-
-    <p>
-        <input type="submit" value="Go" />
-    </p>
-}
+<div class="content-wrapper narrow">
+	@using (Html.BeginForm("Search", "Results"))
+	{
+		<fieldset>
+			<legend>Search</legend>
+			@Html.Label("Enter Routing Number (ABA):")
+			@Html.EditorFor(model => model.RoutingNumber)
+			<input type="submit" value="Search" />
+		</fieldset>
+	}
+</div>

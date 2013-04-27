@@ -8,7 +8,17 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @RenderBody()
+    
+    <div class="content-wrapper">
+		<div style="height:100px;background-color:#ccc;margin-top:20px;">Ad Here</div>
+		@RenderBody()
+		<div style="height:100px;background-color:#ccc;margin-top:20px;">Ad Here</div>
+	</div>
+
+	<div class="footer">
+		<p><a href="@Url.Action("Search", "Results")">about</a> | <a href="http://alphora.com">alphora</a> | <a href="http://databaseconsultinggroup.com">consulting</a> | <a href="http://infocanyon.com/zipcodes">zip code service</a></p>
+		<p>Copyright © 2013 Database Consulting Group. All rights reserved.</p>
+	</div>
 
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)

@@ -18,6 +18,9 @@ namespace RoutingLookup
 
 			config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 
+			config.Filters.Add(new Filters.AllowCrossDomainFilterApi());
+			config.Filters.Add(new Filters.UpdateFilterApi());
+
 			//var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
 			//config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
 		}

@@ -1,0 +1,42 @@
+﻿@model RoutingLookup.Models.PagedList
+<div class="paging" style="display:inline-block; margin-right:5px;">
+	Page 
+	<div class="pages" style="display:inline-block;">
+	@{
+	 
+		var ellipsis1 = false;
+		var ellipsis2 = false;
+		for (var i = 1; i <= Model.TotalPages; i++)
+		{
+			if (i == 1 || i == Model.TotalPages || Math.Abs(i - Model.CurrentPage) < 3)
+			{
+				if (i == Model.CurrentPage)
+				{
+					<span>@i</span>
+				}
+				else
+				{
+					if (Model.Url.Contains("?"))
+					{
+						<a href="@Model.Url&amp;PageNumber=@i">@i</a>
+					}
+					else
+					{
+						<a href="@Model.Url?PageNumber=@i">@i</a>
+					}
+				}
+			}
+			else if (i > 1 && i < Model.CurrentPage && !ellipsis1)
+			{
+				ellipsis1 = true;
+				<span>...</span>
+			}
+			else if (i > Model.CurrentPage && i < Model.TotalPages && !ellipsis2)
+			{
+				ellipsis2 = true;
+				<span>...</span>
+			}
+		}
+	}
+	</div>
+</div>

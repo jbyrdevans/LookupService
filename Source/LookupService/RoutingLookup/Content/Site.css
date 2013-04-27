@@ -6,7 +6,7 @@
 
 body {
     background-color: #fff;
-    border-top: solid 10px #000;
+    /*border-top: solid 10px #000;*/
     color: #333;
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
@@ -96,6 +96,10 @@ h5, h6 {
 .content-wrapper {
     margin: 0 auto;
     max-width: 960px;
+}
+.content-wrapper.narrow {
+    margin: 0 auto;
+    max-width: 480px;
 }
 
 #body {
@@ -207,6 +211,10 @@ ul#menu {
 
 /* page elements
 ----------------------------------------------------------*/
+.footer p {
+	text-align:center;
+}
+
 /* featured */
 .featured {
     background-color: #fff;
@@ -399,6 +407,7 @@ fieldset {
     border: none;
     margin: 0;
     padding: 0;
+	text-align: center;
 }
 
     fieldset legend {
@@ -425,13 +434,14 @@ label.checkbox {
 }
 
 input, textarea {
+	/*text-align:center;*/
     border: 1px solid #e2e2e2;
     background: #fff;
     color: #333;
     font-size: 1.2em;
     margin: 5px 0 6px 0;
     padding: 5px;
-    width: 300px;
+    width: 100%;
 }
 
 textarea {
@@ -459,7 +469,8 @@ textarea {
         font-weight: 600;
         padding: 7px;
         margin-right: 8px;
-        width: auto;
+        width: 30%;
+		margin-left: 5px;
     }
 
     td input[type="submit"],
@@ -714,9 +725,12 @@ tr.pager td {
         }
 
     /* forms */
-    input {
-        width: 90%;
-    }
+	input,
+	input[type="submit"],
+	input[type="button"],
+	button {
+		width: 100%;
+	}
 
     /* login page */
     #loginForm {

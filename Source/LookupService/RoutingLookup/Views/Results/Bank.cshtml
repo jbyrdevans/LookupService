@@ -1,15 +1,20 @@
-﻿@model RoutingLookup.Models.Bank
+﻿@model RoutingLookup.Models.BankResult
 @{
     ViewBag.Title = "Results";
 }
 
-<h2>Bank</h2>
+@{
+	if (Model.Search != null)
+	{
+		Html.RenderPartial("_SearchSmall", Model.Search);
+	}
+}
 
-@if (Model == null)
+@if (Model.Bank == null)
 {
 	<div>No results found.</div>
 }
 else
 {
-	@Html.DisplayFor(model => Model)
+	@Html.DisplayFor(model => Model.Bank)
 }

@@ -1,0 +1,29 @@
+﻿@model RoutingLookup.Models.Search
+@if (Model == null) {
+	
+} else if (String.IsNullOrEmpty(Model.RoutingNumber))
+{
+	using (Html.BeginForm("SearchAdvanced", "Results"))
+	{
+		<fieldset>
+			<legend>Search</legend>
+			<div style="display:inline-block">@Html.EditorFor(model => model.Name)</div>
+			<div style="display:inline-block">@Html.EditorFor(model => model.State)</div>
+			<div style="display:inline-block">@Html.EditorFor(model => model.City)</div>
+
+			<div style="display:inline-block"><input type="submit" value="Search Again" style="width:auto; margin-left:15px;" /></div>
+		
+		</fieldset>
+	}
+} else {
+	using (Html.BeginForm("Search", "Results"))
+	{
+		<fieldset>
+			<legend>Search</legend>
+			<div style="display:inline-block">@Html.EditorFor(model => model.RoutingNumber)</div>
+
+			<div style="display:inline-block"><input type="submit" value="Search Again" style="width:auto; margin-left:15px;" /></div>
+		
+		</fieldset>
+	}
+}

@@ -126,12 +126,17 @@
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\BankController.cs" />
+    <Compile Include="Filters\AllowCrossDomainFilterApi.cs" />
     <Compile Include="Filters\UpdateFilter.cs" />
+    <Compile Include="Filters\UpdateFilterApi.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Bank.cs" />
     <Compile Include="Models\BankContext.cs" />
+    <Compile Include="Models\BankResult.cs" />
+    <Compile Include="Models\BankResultList.cs" />
+    <Compile Include="Models\PagedList.cs" />
     <Compile Include="Models\Search.cs" />
     <Compile Include="Models\Version.cs" />
     <Compile Include="Processors\UpdateProcessor.cs" />
@@ -245,6 +250,8 @@
     <Content Include="Views\Results\SearchAdvanced.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\BankListItem.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\BankListHeader.cshtml" />
+    <Content Include="Views\Results\_SearchSmall.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\PagedList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

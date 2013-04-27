@@ -13,7 +13,7 @@ namespace RoutingLookup.Controllers
 		{
 			var rc = new BankController();
 			var bank = rc.Get(id);
-			return View(bank);
+			return View(new BankResult() { Search = null, Bank = bank });
 		}
 
 		public ActionResult BankList(Search search)
@@ -22,11 +22,23 @@ namespace RoutingLookup.Controllers
 			var banks = sc.Get(search);
 			if (banks.Count() == 1)
 			{
-				return RedirectToAction("Bank", "Results", new { id = banks.First().RoutingNumber });
+				return View("Bank",  new BankResult() { Search = search, Bank = banks.First() });
 			}
 			else
 			{
-				return View(banks);
+				var total = banks.Count();
+				var pageLen = 10;
+				var nonPagedSearch = new Search(search);
+				return View(new BankResultList()
+				{
+					Search = search,
+					Banks = banks.Skip((search.PageNumber.Value - 1) * pageLen).Take(pageLen),
+					TotalResults = total,
+					CurrentPage = search.PageNumber.Value,
+					PageLength = pageLen,
+					TotalPages = (int)Math.Ceiling((decimal)total / (decimal)pageLen),
+					Url = Url.Action("BankList", "Results", nonPagedSearch)
+				});
 			}
 		}
 

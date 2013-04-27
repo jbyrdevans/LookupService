@@ -1,17 +1,22 @@
-﻿@model IEnumerable<RoutingLookup.Models.Bank>
+﻿@model RoutingLookup.Models.BankResultList
 @{
     ViewBag.Title = "Results";
 }
 
-<h2>Banks</h2>
+@{
+	Html.RenderPartial("_SearchSmall", Model.Search);
+}
 
-@if (Model.Count() == 0) {
+@if (Model.Banks.Count() == 0) {
 	<div>No results found.</div>
 } else {
-	var first = Model.FirstOrDefault();
+	<div>@Model.TotalResults results found:</div>
+	var first = Model.Banks.FirstOrDefault();
 	@Html.DisplayFor(model => first, "BankListHeader", null)
-	foreach (var bank in Model)
+	foreach (var bank in Model.Banks)
 	{
 		@Html.DisplayFor(model => bank, "BankListItem", null)
 	}
+	var pagedList = (Model as RoutingLookup.Models.PagedList);
+	@Html.DisplayFor(model => pagedList)
 }
