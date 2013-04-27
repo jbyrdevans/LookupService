@@ -1,72 +1,77 @@
 ﻿@model RoutingLookup.Models.PagedList
-<div class="paging">
-	<div class="prev">
-	@{
-		var lastPage = Model.CurrentPage - 1;
-		if (lastPage >= 1) {
-			if (Model.Url.Contains("?"))
-			{
-				<span><a href="@Model.Url&amp;PageNumber=@lastPage">Previous</a></span>
-			}
-			else
-			{
-				<span><a href="@Model.Url?PageNumber=@lastPage">Previous</a></span>
-			}
-		}
-	}
-	</div>
-	<div class="pages">
-	@{
-	 
-		var ellipsis1 = false;
-		var ellipsis2 = false;
-		for (var i = 1; i <= Model.TotalPages; i++)
-		{
-			if (i == 1 || i == Model.TotalPages || Math.Abs(i - Model.CurrentPage) < 5)
-			{
-				if (i == Model.CurrentPage)
-				{
-					<span class="selected">@i</span>
-				}
-				else
-				{
+@{
+	
+	if (Model.TotalPages > 1) {
+		<div class="paging">
+			<div class="prev">
+			@{
+				var lastPage = Model.CurrentPage - 1;
+				if (lastPage >= 1) {
 					if (Model.Url.Contains("?"))
 					{
-						<span><a href="@Model.Url&amp;PageNumber=@i">@i</a></span>
+						<span><a href="@Model.Url&amp;PageNumber=@lastPage">Previous</a></span>
 					}
 					else
 					{
-						<span><a href="@Model.Url?PageNumber=@i">@i</a></span>
+						<span><a href="@Model.Url?PageNumber=@lastPage">Previous</a></span>
 					}
 				}
 			}
-			else if (i > 1 && i < Model.CurrentPage && !ellipsis1)
-			{
-				ellipsis1 = true;
-				<span>...</span>
+			</div>
+			<div class="pages">
+			@{
+	 
+				var ellipsis1 = false;
+				var ellipsis2 = false;
+				for (var i = 1; i <= Model.TotalPages; i++)
+				{
+					if (i == 1 || i == Model.TotalPages || Math.Abs(i - Model.CurrentPage) < 5)
+					{
+						if (i == Model.CurrentPage)
+						{
+							<span class="selected">@i</span>
+						}
+						else
+						{
+							if (Model.Url.Contains("?"))
+							{
+								<span><a href="@Model.Url&amp;PageNumber=@i">@i</a></span>
+							}
+							else
+							{
+								<span><a href="@Model.Url?PageNumber=@i">@i</a></span>
+							}
+						}
+					}
+					else if (i > 1 && i < Model.CurrentPage && !ellipsis1)
+					{
+						ellipsis1 = true;
+						<span>...</span>
+					}
+					else if (i > Model.CurrentPage && i < Model.TotalPages && !ellipsis2)
+					{
+						ellipsis2 = true;
+						<span>...</span>
+					}
+				}
 			}
-			else if (i > Model.CurrentPage && i < Model.TotalPages && !ellipsis2)
-			{
-				ellipsis2 = true;
-				<span>...</span>
+			</div>
+			<div class="next">
+			@{
+				var nextPage = Model.CurrentPage + 1;
+				if (nextPage <= Model.TotalPages)
+				{
+					if (Model.Url.Contains("?"))
+					{
+						<span><a href="@Model.Url&amp;PageNumber=@nextPage">Next</a></span>
+					}
+					else
+					{
+						<span><a href="@Model.Url?PageNumber=@nextPage">Next</a></span>
+					}
+				}
 			}
-		}
+			</div>
+		</div>
 	}
-	</div>
-	<div class="next">
-	@{
-		var nextPage = Model.CurrentPage + 1;
-		if (nextPage <= Model.TotalPages)
-		{
-			if (Model.Url.Contains("?"))
-			{
-				<span><a href="@Model.Url&amp;PageNumber=@nextPage">Next</a></span>
-			}
-			else
-			{
-				<span><a href="@Model.Url?PageNumber=@nextPage">Next</a></span>
-			}
-		}
-	}
-	</div>
-</div>
+}

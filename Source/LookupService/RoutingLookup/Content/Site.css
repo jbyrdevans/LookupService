@@ -706,6 +706,10 @@ tr.pager td {
 	.bank-list .paging .next, .bank-list .paging .prev, .bank-list .paging .pages {
 		display: inline-block;
 	}
+	.bank-list .paging .next, .bank-list .paging .prev {
+		width:13%;
+		height: 1em;
+	}
 	.bank-list .paging .next {
 		text-align: right;
 		float:right;
