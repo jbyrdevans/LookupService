@@ -3,14 +3,6 @@
 	ViewBag.Title = "Search";
 }
 
-<div class="content-wrapper narrow">
-	@using (Html.BeginForm("Search", "Results"))
-	{
-		<fieldset>
-			<legend>Search</legend>
-			@Html.Label("Enter Routing Number (ABA):")
-			@Html.EditorFor(model => model.RoutingNumber)
-			<input type="submit" value="Search" />
-		</fieldset>
-	}
-</div>
+@{
+	Html.RenderPartial("_SearchBasic", Model);
+}

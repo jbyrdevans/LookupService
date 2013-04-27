@@ -1,0 +1,18 @@
+﻿@model RoutingLookup.Models.Search
+
+@using (Html.BeginForm("Search", "Results"))
+{
+	<div class="search-box">
+		<fieldset>
+			<legend>Search</legend>
+			<div class="row">
+				<div class="label">@Html.Label("Routing Number:")</div>
+				<div class="field">@Html.EditorFor(model => model.RoutingNumber)</div>
+			</div>
+			<div class="button-row">
+				<div class="search-toggle"><a href="@Url.Action("SearchAdvanced", "Results")">advanced search</a></div>
+				<div class="search-button"><input type="submit" value="Search" /></div>
+			</div>
+		</fieldset>
+	</div>
+}

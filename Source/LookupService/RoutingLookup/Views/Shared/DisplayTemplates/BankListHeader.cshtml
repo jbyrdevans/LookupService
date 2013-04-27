@@ -1,16 +1,13 @@
 ﻿@model RoutingLookup.Models.Bank
-<div class="bank-list header">
-	<div style="display:inline-block; width: 200px;">
+<div class="heading">
+	<div class="row item-rn">
 		<div>
 			@Html.LabelFor(model => model.RoutingNumber)
 		</div>
 	</div>
-	<div style="display:inline-block; width: 400px;">
+	<div class="row item-name">
 		<div>
 			@Html.LabelFor(model => model.Name)
 		</div>
-	</div>
-	<div style="display:inline-block; width: 80px;">
-		<div>&nbsp;</div>
 	</div>
 </div>

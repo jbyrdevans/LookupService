@@ -1,45 +1,40 @@
 ﻿@model RoutingLookup.Models.Bank
 <div class="bank">
-	<div>
-		@Html.LabelFor(model => model.RoutingNumber)
+	<div class="routing-number odd">
+		<div class="label">
+			@Html.Label("Routing Number:")
+		</div>
+		<div class="content">
+			@Html.DisplayFor(model => model.RoutingNumber)
+		</div>
 	</div>
-	<div>
-		@Html.DisplayFor(model => model.RoutingNumber)
+	<div class="name even">
+		<div class="label">
+			@Html.Label("Bank Name:")
+		</div>
+		<div class="content">
+			@Html.DisplayFor(model => model.Name)
+		</div>
 	</div>
-	<div>
-		@Html.LabelFor(model => model.Name)
+	<div class="address odd">
+		<div class="label">
+			@Html.Label("Address:")
+		</div>
+		<div class="content">
+			<div>
+				@Html.DisplayFor(model => model.Address)
+			</div>
+			<div>
+				@Html.DisplayFor(model => model.City), @Html.DisplayFor(model => model.State) @Html.DisplayFor(model => model.Zip)
+			</div>
+		</div>
 	</div>
-	<div>
-		@Html.DisplayFor(model => model.Name)
-	</div>
-	<div>
-		@Html.LabelFor(model => model.Address)
-	</div>
-	<div>
-		@Html.DisplayFor(model => model.Address)
-	</div>
-	<div>
-		@Html.LabelFor(model => model.City)
-	</div>
-	<div>
-		@Html.DisplayFor(model => model.City)
-	</div>
-	<div>
-		@Html.LabelFor(model => model.State)
-	</div>
-	<div>
-		@Html.DisplayFor(model => model.State)
-	</div>
-	<div>
-		@Html.LabelFor(model => model.Zip)
-	</div>
-	<div>
-		@Html.DisplayFor(model => model.Zip)
-	</div>
-	<div>
-		@Html.LabelFor(model => model.Phone)
-	</div>
-	<div>
-		@Html.DisplayFor(model => model.Phone)
+	<div class="phone even">
+		<div class="label">
+			@Html.Label("Phone Number:")
+		</div>
+		<div class="content">
+			(@Model.Phone.Substring(0, 3)) @Model.Phone.Substring(3, 3)-@Model.Phone.Substring(6, 4)
+		</div>
 	</div>
 </div>

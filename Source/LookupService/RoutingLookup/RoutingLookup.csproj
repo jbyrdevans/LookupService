@@ -252,6 +252,8 @@
     <Content Include="Views\Shared\DisplayTemplates\BankListHeader.cshtml" />
     <Content Include="Views\Results\_SearchSmall.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\PagedList.cshtml" />
+    <Content Include="Views\Results\_SearchAdvanced.cshtml" />
+    <Content Include="Views\Results\_SearchBasic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

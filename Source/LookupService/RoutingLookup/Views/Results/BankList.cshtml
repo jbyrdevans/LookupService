@@ -8,15 +8,22 @@
 }
 
 @if (Model.Banks.Count() == 0) {
-	<div>No results found.</div>
+	<div style="text-align:center;">No results found.</div>
 } else {
-	<div>@Model.TotalResults results found:</div>
-	var first = Model.Banks.FirstOrDefault();
-	@Html.DisplayFor(model => first, "BankListHeader", null)
-	foreach (var bank in Model.Banks)
-	{
-		@Html.DisplayFor(model => bank, "BankListItem", null)
+	<div class="bank-list">
+	@{
+		var first = Model.Banks.FirstOrDefault();
+		var i = 0;
+		var evenodd = "even";
+		@Html.DisplayFor(model => first, "BankListHeader", null)
+		foreach (var bank in Model.Banks)
+		{
+			i++;
+			if (i % 2 == 0) { evenodd = "even"; } else { evenodd = "odd"; }
+			@Html.DisplayFor(model => bank, "BankListItem", new { evenodd = evenodd })
+		}
+		var pagedList = (Model as RoutingLookup.Models.PagedList);
+		@Html.DisplayFor(model => pagedList)
 	}
-	var pagedList = (Model as RoutingLookup.Models.PagedList);
-	@Html.DisplayFor(model => pagedList)
+	</div>
 }

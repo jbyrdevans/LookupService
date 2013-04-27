@@ -1,31 +1,8 @@
 ﻿@model RoutingLookup.Models.Search
 @{
-    ViewBag.Title = "Search";
+    ViewBag.Title = "Advanced Search";
 }
 
-<h2>Search Advanced</h2>
-@using (Html.BeginForm("SearchAdvanced", "Results"))
-{
-	<div>
-		@Html.LabelFor(model => model.Name)
-	</div>
-	<div>
-		@Html.EditorFor(model => model.Name)
-	</div>
-	<div>
-		@Html.LabelFor(model => model.State)
-	</div>
-	<div>
-		@Html.EditorFor(model => model.State)
-	</div>
-	<div>
-		@Html.LabelFor(model => model.City)
-	</div>
-	<div>
-		@Html.EditorFor(model => model.City)
-	</div>
-
-    <p>
-        <input type="submit" value="Go" />
-    </p>
+@{
+	Html.RenderPartial("_SearchAdvanced", Model);
 }

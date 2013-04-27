@@ -8,10 +8,15 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+	<div class="header">
+		<p><a href="@Url.Action("Search", "Results")">basic search</a> | <a href="@Url.Action("SearchAdvanced", "Results")">advanced search</a></p>
+	</div>
     
     <div class="content-wrapper">
 		<div style="height:100px;background-color:#ccc;margin-top:20px;">Ad Here</div>
-		@RenderBody()
+		<div class="content-wrapper narrow">
+			@RenderBody()
+		</div>
 		<div style="height:100px;background-color:#ccc;margin-top:20px;">Ad Here</div>
 	</div>
 

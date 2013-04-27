@@ -99,7 +99,7 @@ h5, h6 {
 }
 .content-wrapper.narrow {
     margin: 0 auto;
-    max-width: 480px;
+    max-width: 640px;
 }
 
 #body {
@@ -211,9 +211,6 @@ ul#menu {
 
 /* page elements
 ----------------------------------------------------------*/
-.footer p {
-	text-align:center;
-}
 
 /* featured */
 .featured {
@@ -405,10 +402,15 @@ aside {
 /* forms */
 fieldset {
     border: none;
-    margin: 0;
-    padding: 0;
+    margin: 10px;
+    padding: 10px;
 	text-align: center;
 }
+
+    fieldset label {
+        text-align: left;
+		display:inline-block;
+    }
 
     fieldset legend {
         display: none;
@@ -426,7 +428,7 @@ fieldset {
 label {
     display: block;
     font-size: 1.2em;
-    font-weight: 600;
+    font-weight: 200;
 }
 
 label.checkbox {
@@ -442,6 +444,7 @@ input, textarea {
     margin: 5px 0 6px 0;
     padding: 5px;
     width: 100%;
+	max-width:200px;
 }
 
 textarea {
@@ -597,6 +600,145 @@ tr.pager td {
     padding: 0 0.25em 0 0;
 }
 
+/********************
+*   My Added Styles
+********************/
+
+
+.header {
+	margin-bottom: 15px;
+	padding: 10px;
+	box-shadow: 0px 1px 9px 0px;
+	-moz-box-shadow: 0px 1px 9px 0px;
+	-webkit-box-shadow: 0px 1px 9px 0px;
+}
+.header p {
+	text-align:center;
+}
+
+.footer {
+	margin-top: 15px;
+	padding: 10px;
+	box-shadow: 0px -1px 9px 0px;
+	-moz-box-shadow: 0px -1px 9px 0px;
+	-webkit-box-shadow: 0px -1px 9px 0px;
+}
+.footer p {
+	text-align:center;
+}
+
+/* bank information */
+.bank {
+	width: 470px;
+	padding: 4px;
+	margin: 30px auto;
+	border: 1px gray solid;
+	box-shadow: 3px 3px 9px -2px;
+	-webkit-box-shadow: 3px 3px 9px -2px;
+	-moz-box-shadow: 3px 3px 9px -2px;
+}
+	.bank .label {
+		width: 150px;
+	}
+	.bank .content {
+		width: 270px;
+	}
+	.bank .label,
+	.bank .content {
+		display: inline-block;
+		vertical-align:top;
+		padding: 8px;
+	}
+	.bank .label label {
+		font-weight:100;
+	}
+	
+/* search box */
+.search-box {
+	padding: 4px;
+	margin: 30px auto;
+	border: 1px gray solid;
+	box-shadow: 3px 3px 9px -2px;
+	-webkit-box-shadow: 3px 3px 9px -2px;
+	-moz-box-shadow: 3px 3px 9px -2px;
+}
+	.search-box .row {
+		margin-right:70px;
+	}
+	.search-box .button-row {
+		margin-left:70px;
+	}
+	.search-box .label {
+		display:inline-block; 
+		width:120px; 
+		text-align:left;
+	}
+	.search-box .field {
+		display:inline-block; 
+	}
+	.search-box .search-toggle {
+		display:inline-block; 
+		text-align:right; 
+		margin:10px 0 0 0;
+		width:110px;
+	}
+	.search-box .search-button {
+		display:inline-block; 
+		text-align:right;
+		margin-left:5px;
+	}
+	.search-box .search-button input {
+		width:auto;
+	}
+
+.bank-list .heading, .bank-list .paging {
+	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.4);
+	border: 1px solid gray;
+}
+.bank-list .heading {
+	margin-bottom: 3px;
+}
+.bank-list .paging {
+	margin: 1px 0 0 0;
+	padding: 8px;
+	min-height: 1.5em;
+}
+	.bank-list .paging .next, .bank-list .paging .prev, .bank-list .paging .pages {
+		display: inline-block;
+	}
+	.bank-list .paging .next {
+		text-align: right;
+		float:right;
+	}
+	.bank-list .paging .prev {
+		text-align: left;
+		float:left;
+	}
+	.bank-list .paging .pages {
+		text-align: center;
+		width: 70%;
+		margin:auto;
+	}
+
+	.bank-list .row {
+		display: inline-block;
+		padding: 8px;
+	}
+		.bank-list .item-rn {
+			width: 150px;
+			display: inline-block;
+		}
+		.bank-list .item-name {
+			width: 400px;
+			display: inline-block;
+		}
+		
+.even {
+	background-color:#e3e3e3;
+}
+.odd {
+	background-color:#eee;
+}
 
 /********************
 *   Mobile Styles   *
@@ -767,4 +909,17 @@ tr.pager td {
         footer p {
             margin: 0;
         }
+		
+	.bank-list .paging .pages {
+		display:none;
+	}
+}
+@media only screen and (max-width: 450px) {
+
+	fieldset {
+		text-align: left;
+	}
+	.search-box .row {
+		margin-right: 20px;
+	}
 }

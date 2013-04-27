@@ -1,0 +1,26 @@
+﻿@model RoutingLookup.Models.Search
+
+@using (Html.BeginForm("SearchAdvanced", "Results"))
+{
+	<div class="search-box">
+		<fieldset>
+			<legend>SearchAdvanced</legend>
+			<div class="row">
+				<div class="label">@Html.Label("Bank Name:")</div>
+				<div class="field">@Html.EditorFor(model => model.Name)</div>
+			</div>
+			<div class="row">
+				<div class="label">@Html.Label("State:")</div>
+				<div class="field">@Html.EditorFor(model => model.State)</div>
+			</div>
+			<div class="row">
+				<div class="label">@Html.Label("City:")</div>
+				<div class="field">@Html.EditorFor(model => model.City)</div>
+			</div>
+			<div class="button-row">
+				<div class="search-toggle"><a href="@Url.Action("Search", "Results")">basic search</a></div>
+				<div class="search-button"><input type="submit" value="Search" /></div>
+			</div>
+		</fieldset>
+	</div>
+}

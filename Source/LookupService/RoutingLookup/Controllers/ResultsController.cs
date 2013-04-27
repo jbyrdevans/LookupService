@@ -13,7 +13,7 @@ namespace RoutingLookup.Controllers
 		{
 			var rc = new BankController();
 			var bank = rc.Get(id);
-			return View(new BankResult() { Search = null, Bank = bank });
+			return View(new BankResult() { Search = new Search() { RoutingNumber = id }, Bank = bank });
 		}
 
 		public ActionResult BankList(Search search)
